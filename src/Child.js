@@ -2,6 +2,15 @@ import React from 'react';
 import './App.css';
 
 const Child = () => {
+
+    let transactions = [
+        { amount: 500, desc: 'Cash' },
+        { amount: -20, desc: 'Book' },
+        { amount: -400, desc: 'Camera' },
+
+    ]
+
+
     return (
         <div className="container">
             <h1 className="text-center">Expense Tracker App</h1>
@@ -16,20 +25,17 @@ const Child = () => {
             <h3>History</h3>
             <hr />
             <ul className="transaction-list">
-                <li>
-                    <span>Cash</span>
-                    <span>+500</span>
-                </li>
+                {
+                    transactions.map((transObj, ind) => {
+                        return (
+                            <li>
+                                <span>{transObj.desc}</span>
+                                <span>{transObj.amount}</span>
+                            </li>
+                        )
+                    })
+                }
 
-                <li>
-                    <span>Cash</span>
-                    <span>+500</span>
-                </li>
-
-                <li>
-                    <span>Cash</span>
-                    <span>+500</span>
-                </li>
             </ul>
 
 
