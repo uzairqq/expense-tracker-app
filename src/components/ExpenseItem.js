@@ -1,12 +1,16 @@
 import "./ExpenseItem.css";
 
 const ExpenseItem = () => {
+  const date = new Date().toUTCString();
+  const expenseName = "Car Insurance";
+  const expenseCost = "129.23";
+
   return (
     <div className="expense-item">
-      <div>March 19,2022</div>
+      <div>{date}</div>
       <div className="expense-item__description">
-        <h2>Car Insurance</h2>
-        <div className="expense-item__price">129.23</div>
+        <h2>{expenseName}</h2>
+        <div className="expense-item__price">{expenseCost}</div>
       </div>
     </div>
   );
