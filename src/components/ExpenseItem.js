@@ -1,7 +1,11 @@
 const ExpenseItem = () => {
   return (
     <div>
-      <h2>expense item component</h2>
+      <div>March 19,2022</div>
+      <div>
+        <h2>Car Insurance</h2>
+        <div>129.23</div>
+      </div>
     </div>
   );
 };
