@@ -6,6 +6,7 @@ import "./Expenses.css";
 const Expenses = (props) => {
   const [year, setSelectedYear] = useState("");
   const handleSelectedYear = (year) => {
+    console.log(year);
     setSelectedYear(year);
   };
 
@@ -16,6 +17,7 @@ const Expenses = (props) => {
       </div>
       {props.expenses.map((expense) => (
         <ExpenseItem
+          key={expense.id}
           title={expense.title}
           amount={expense.amount}
           date={expense.date}

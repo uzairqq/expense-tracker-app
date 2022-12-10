@@ -35,8 +35,6 @@ const App = () => {
   const addExpenseHandler = (expense) => {
     // setExpenses([expense, ...expenses]); one method to update update state.
     setExpenses((previousExpenses) => {
-      console.log(expense);
-      console.log(previousExpenses);
       return [...previousExpenses, expense];
     }); //update state based on previous state.
   };
