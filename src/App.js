@@ -29,13 +29,13 @@ const DUMMY_EXPENSES = [
   },
 ];
 
-const App = () => {
+const App = (props) => {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
   const addExpenseHandler = (expense) => {
     // setExpenses([expense, ...expenses]); one method to update update state.
     setExpenses((previousExpenses) => {
-      return [...previousExpenses, expense];
+      return [expense, ...previousExpenses];
     }); //update state based on previous state.
   };
 

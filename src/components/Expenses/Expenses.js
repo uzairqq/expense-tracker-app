@@ -4,18 +4,21 @@ import ExpenseItem from "./ExpenseItem";
 import "./Expenses.css";
 
 const Expenses = (props) => {
-  const [year, setSelectedYear] = useState("");
+  const [year, setSelectedYear] = useState("2021");
   const handleSelectedYear = (year) => {
-    console.log(year);
     setSelectedYear(year);
   };
+
+  const filteredExpenses = props.expenses.filter((expense) => {
+    return expense.date.getFullYear().toString() === year;
+  });
 
   return (
     <div className="expenses">
       <div>
-        <ExpenseFilter onYearSelected={handleSelectedYear} />
+        <ExpenseFilter selected={year} onYearSelected={handleSelectedYear} />
       </div>
-      {props.expenses.map((expense) => (
+      {filteredExpenses.map((expense) => (
         <ExpenseItem
           key={expense.id}
           title={expense.title}
