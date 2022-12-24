@@ -10,15 +10,16 @@ const NewExpense = (props) => {
       id: Math.random().toString(),
     };
     props.onAddExpense(expenseDataObject);
+    setShowExpenseForm(false);
   };
 
   const handleExpenseFormShowAndHide = () => {
     if (showExpenseForm === false) setShowExpenseForm(true);
     if (showExpenseForm === true) alert("Form Already Opened");
   };
-  const stopEditingExpenseForm=()=>{
+  const stopEditingExpenseForm = () => {
     setShowExpenseForm(false);
-  }
+  };
 
   return (
     <div className="new-expense">
